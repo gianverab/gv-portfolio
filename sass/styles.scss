@@ -1,0 +1,143 @@
+@import '_loader';
+@import '_lightbox';
+
+$body-font: 'Roboto Slab', sans-serif;
+$heading-font: 'Montserrat', sans-serif;
+$body-color: #f3f3f3;
+$base-color:#e45136;
+$light-color:#ed8826;
+$heading-color: #fff;
+$divider-color: #7f8c8d;
+$border-color: #bdc3c8;
+$font-color: #606060;
+
+body{
+	background-color: $body-color;
+	margin: 0;
+	font-family: $body-font;
+}
+
+	#app-container{
+		width: 100%;
+		overflow: hidden;
+
+		#app-header{
+			width: 100%;
+			height: 80px;
+			position: fixed;
+			background-color: $base-color;
+			text-align: center;
+			z-index: 10;
+
+			a{
+				color:$heading-color;
+				&:hover{
+					text-decoration: none;
+					color: $heading-color;
+				}
+			}
+
+			h1{
+				line-height: 1.4;
+				margin: 0;
+				color: $heading-color;
+				font-family: $heading-font;
+				font-weight: 700;
+			}
+			p{
+				color: $heading-color;
+				font-family: $heading-font;
+				font-weight: 400;
+				font-size: 16px;
+			}
+		}
+		#app-body{
+			padding: 120px 0 60px 0;
+			min-height: 400px;
+
+			p{
+				font-size: 18px;
+			}
+
+			#navigation{
+				list-style: none;
+				padding: 0;
+				margin:60px 0 15px 0;
+				text-align: center;
+
+				li{
+					display: inline-block;
+					margin-right: 15px;
+					font-family: $heading-font;
+					font-size: 24px;
+
+					a{
+						color: $base-color;
+						padding: 6px 20px;
+						text-decoration: none;
+
+						&:hover{
+							color: $heading-color;
+							background-color: $light-color;
+							text-decoration: none;
+						}
+					}
+
+					&:last-child{
+						margin-right: 0;
+					}
+					&.active a{
+						color: $heading-color;
+						background-color: $light-color;
+						text-decoration: none;
+
+						&:hover{
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			#heading{
+				margin: 0 0 30px 0;
+				font-size: 18px;
+			}
+			#gallery{
+				list-style: none;
+				padding: 0;
+
+				.hidden{
+					display: none;
+				}
+
+				li{
+					
+					img{
+						max-width: 100%;
+						margin-bottom: 30px;
+					}
+
+				} 
+			}
+		}
+		#app-footer{
+			width: 100%;
+			min-height: 10vh;
+
+			p{
+				margin: 0 auto;
+				width: 80%;
+				text-align: center;
+				padding-top: 30px;
+				border-top: 1px solid $divider-color;
+			}
+		}
+	}
+@media screen and(max-width: 480px) {
+	#app-container #app-body #navigation li {
+        margin-right: 5px;
+        font-size: 20px; 
+    }
+    #app-container #app-body #navigation li:last-child {
+        margin-right: 0; 
+    }
+}
